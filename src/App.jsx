@@ -4,10 +4,10 @@ import "./App.css";
 function App() {
   // ===== Use State Variables =====
   const [tasks, setTasks] = useState([
-    "Project 1",
-    "Laundry",
-    "Walk Dogs",
-    "clean room",
+    {text:"Project", completed: False},
+    {text:"Sleep", completed: False},
+    {text:"Make Dinner", completed: False},
+    {text:"Apply for Jobs", completed: False},
   ]);
   const [inputValue, setInputValue] = useState("");
 
@@ -16,7 +16,8 @@ function App() {
     e.preventDefault();
 
     if (inputValue.trim()) {
-      setTasks([...tasks, inputValue]);
+      new_task = {text:inputValue, completed:false}
+      setTasks([...tasks, inputValue]); //adding this things to the end of the set tasks list// 
     }
     setInputValue("");
   };
